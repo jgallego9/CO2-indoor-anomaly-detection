@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomaly Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+    <script>
+
+    </script>
+</head>
+    <body>
+    <canvas id="anomaly_chart"></canvas>
+    <script>
+        const colorAnomaly = "red";
+        const colorNormal = "green";
+        const anomalyDataset = {
+            label: "Anomalias de CO2 en el aula X",
+            data: [],
+            backgroundColor: 'transparent',
+            borderColor: 'blue', 
+            pointRadius: 5,
+            pointBackgroundColor: []
+        };
+        var anomalyChart = new Chart(document.querySelector("#anomaly_chart"), {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [
+                    anomalyDataset,
+                ]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                },
+            }
+        });
+
+        function addData(chart, label, data, color) {
+            chart.data.labels.push(label);
+            chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(data);
+                dataset.pointBackgroundColor.push(color);
+            });
+            chart.update();
+        }
+
+        var ws = new WebSocket("ws://localhost:8000/ws");
+        ws.onmessage = function(event) {
+            var point = JSON.parse(event.data);
+            console.log(point);
+            var color = (point.anomaly == 1) ? colorAnomaly : colorNormal;
+            addData(anomalyChart, point.label, point.value, color);
+        };
+    </script>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+source "C:/Users/javga/esp/esp-idf/components/app_update/Kconfig.projbuild"
+source "C:/Users/javga/esp/esp-idf/components/bootloader/Kconfig.projbuild"
+source "C:/Users/javga/esp/esp-idf/components/esp_rom/Kconfig.projbuild"
+source "C:/Users/javga/esp/esp-idf/components/esptool_py/Kconfig.projbuild"
+source "C:/Users/javga/esp/esp-idf/components/partition_table/Kconfig.projbuild"
+source "C:/Users/javga/esp/esp-idf/examples/common_components/protocol_examples_common/Kconfig.projbuild"
+source "C:/Users/javga/OneDrive/Documentos/master/TFM/esp32-s3/esp_http_client/components/esp-nn/Kconfig.projbuild"
