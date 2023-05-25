@@ -12,8 +12,9 @@
     <body>
     <canvas id="anomaly_chart"></canvas>
     <script>
-        const colorAnomaly = "red";
-        const colorNormal = "green";
+        const colorAnomaly = "red"; // Anomaly point color
+        const colorNormal = "green"; // Normal point color
+        // Inicialize dashboard data
         const anomalyDataset = {
             label: "Anomalias de CO2 en el aula X",
             data: [],
@@ -22,6 +23,7 @@
             pointRadius: 5,
             pointBackgroundColor: []
         };
+        // Create chart
         var anomalyChart = new Chart(document.querySelector("#anomaly_chart"), {
             type: 'line',
             data: {
@@ -41,6 +43,7 @@
             }
         });
 
+        // Function that appends data to the dashboard
         function addData(chart, label, data, color) {
             chart.data.labels.push(label);
             chart.data.datasets.forEach((dataset) => {
@@ -49,7 +52,7 @@
             });
             chart.update();
         }
-
+        // Open websocket and listen it
         var ws = new WebSocket("ws://localhost:8000/ws");
         ws.onmessage = function(event) {
             var point = JSON.parse(event.data);

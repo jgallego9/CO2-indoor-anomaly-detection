@@ -1,32 +1,37 @@
-# Prerequisites
-*.d
+# Archivos y directorios generados por Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pyw
+*.pyz/
 
-# Compiled Object files
-*.slo
-*.lo
+# Entorno virtual de Python (por ejemplo, creado con virtualenv o venv)
+venv/
+
+# Archivos de compilación de C++
 *.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
 *.out
-*.app
+
+# Ejecutables de C++
+*.exe
+
+# Directorios de compilación de C++
+build/
+bin/
+
+# Archivos de configuración de IDE específicos
+.vscode/
+.idea/
+
+# Archivos de caché generados por IDE
+*.vs/
+
+# Archivos de registro
+*.log
+
+# Otros archivos y directorios generados
+*.swp
+.DS_Store
+.devcontainer
