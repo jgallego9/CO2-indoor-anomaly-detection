@@ -41,7 +41,7 @@ mae = tf.keras.losses.MeanAbsoluteError(reduction=tf.keras.losses.Reduction.NONE
 # Set anomaly threshold
 THRESHOLD = 0.6844909
 
-MODE = "standalone" # cloud => Cloud mode, standalone => Standalone mode
+MODE = "cloud" # cloud => Cloud mode, standalone => Standalone mode
 
 last_observations = []
 
@@ -119,7 +119,7 @@ async def predict(item: PointData):
         # Scale input data
         norm_data = scaler.transform(np.array(last_observations).reshape(-1, 1))
         # Make inference
-        entrada = np.array(norm_data).reshape(-1,10,1)
+        entrada = np.array(norm_data).reshape(-1,6,1)
         prediccion = model.predict(entrada)
         losses = mae(entrada, prediccion).numpy()
         anomalies = predict_anomaly(losses)[0]
