@@ -27,6 +27,18 @@ Comparativa de modelos:
 
  * [LICENSE](./LICENSE) Licencia del código
  * [README.md](./README.md) Descripción general del repositorio
+ * [datasets](./datasets) Conjuntos de datos generados para el entrenamiento de los modelos semisupervisados y no supervisados
+    * [semisupervised](./datasets/semisupervised)
+      * [test_data.csv](./datasets/semisupervised/test_data.csv)
+      * [test_data_labels.csv](./datasets/semisupervised/test_data_labels.csv)
+      * [test_data_norm.csv](./datasets/semisupervised/test_data_norm.csv)
+      * [train_data.csv](./datasets/semisupervised/train_data.csv)
+      * [val_data.csv](./datasets/semisupervised/val_data.csv)
+    * [unsupervised](./datasets/unsupervised)
+      * [test_data.csv](./datasets/unsupervised/test_data.csv)
+      * [test_data_labels.csv](./datasets/unsupervised/test_data_labels.csv)
+      * [test_data_norm.csv](./datasets/unsupervised/test_data_norm.csv)
+      * [train_data.csv](./datasets/unsupervised/train_data.csv)
  * [src](./src) Código Fuente
     * [jupyter](./src/jupyter) Jupyter Notebook en la que se ha realizado la preparación de los datos y los modelos
       * [models.ipynb](./src/jupyter/models.ipynb)
