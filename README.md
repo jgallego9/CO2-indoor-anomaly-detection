@@ -75,6 +75,18 @@ Comparativa de modelos:
           * [LSTM_model.h5](./src/server/static/LSTM_model.h5)
           * [index.html](./src/server/static/index.html)
         * [main.py](./src/server/main.py)
+    * [load_test](./src/load_test) Pruebas de carga (CPU, RAM) de los modelos acompañadas de imágenes con resultados
+        * [load_images](./src/load_test/load_images)
+        * [load_test_lstm_cloud.py](./src/load_test/load_test_lstm_cloud.py)
+        * [load_test_lstm_standalone.py](./src/load_test/load_test_lstm_standalone.py)
+        * [load_test_oc_svm.py](./src/load_test/load_test_oc_svm.py)
+        * [load_test_isolation_forest.py](./src/load_test/load_test_isolation_forest.py)
+ * [models](./models) Modelos de Keras, TFLite y Sklearn generados
+   * [LSTM_model.json](./models/LSTM_model.json)
+   * [LSTM_model.h5](./models/LSTM_model.h5)
+   * [model_autoencoder.tflite](./models/model_autoencoder.tflite)
+   * [isolation_forest.pkl](./models/isolation_forest.pkl)
+   * [oc_svm.pkl](./models/oc_svm.pkl)
  * [TFM_JavierGallego.pdf](./TFM_JavierGallego.pdf) Memoria del TFM
 
 Una descripción más exhaustiva de cada componente se incluye en los ficheros README de cada parte del proyecto.
